@@ -1,6 +1,6 @@
 {
   "name": "board.web",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A web server factory for board.",
   "main": "index.js",
   "scripts": {
@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/v0lkan/board.web/issues"
   },
-  "homepage": "https://github.com/v0lkan/board.web#readme"
+  "homepage": "https://github.com/v0lkan/board.web#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
 }
