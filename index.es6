@@ -27,6 +27,8 @@
  * Currently it only creates the express.js server.
  */
 
+// TODO: add some basic logging.
+
 import express from 'express';
 import {join} from 'path';
 import {createReadStream} from 'fs';
@@ -38,13 +40,13 @@ const PORT = 4244;
  * @param pathToBoards - Path to board templates.
  * @param boards - Board configuration object.
  */
-let create = (pathToBoards, boards) => {
+let create = (cwd, pathToBoards, boards) => {
     void boards;
 
     let app = express();
 
     app.use(express.static(join(__dirname, 'public')));
-    app.use('boards/', express.static(pathToBoards));
+    app.use('/boards', express.static(join(cwd, pathToBoards)));
 
     app.get('/:board', function(req, res) {
         // TODO: sanity check

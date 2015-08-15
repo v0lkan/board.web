@@ -27,6 +27,8 @@
  * Currently it only creates the express.js server.
  */
 
+// TODO: add some basic logging.
+
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
@@ -49,13 +51,13 @@ var PORT = 4244;
  * @param pathToBoards - Path to board templates.
  * @param boards - Board configuration object.
  */
-var create = function create(pathToBoards, boards) {
+var create = function create(cwd, pathToBoards, boards) {
   void boards;
 
   var app = (0, _express2['default'])();
 
   app.use(_express2['default']['static']((0, _path.join)(__dirname, 'public')));
-  app.use('boards/', _express2['default']['static'](pathToBoards));
+  app.use('/boards', _express2['default']['static']((0, _path.join)(cwd, pathToBoards)));
 
   app.get('/:board', function (req, res) {
     // TODO: sanity check
