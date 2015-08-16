@@ -48,6 +48,11 @@ let create = (cwd, pathToBoards, boards) => {
     app.use(express.static(join(__dirname, 'public')));
     app.use('/boards', express.static(join(cwd, pathToBoards)));
 
+    // TODO: instead of doing this relative to board path, use cwd to resolve
+    // all the paths. which also means getting rid of  `pathToBoards` parameter
+    // as well, since it can be computed from cwd anyways.
+    app.use('/css', express.static(join(cwd, pathToBoards, '../assets/css')));
+
     app.get('/:board', function(req, res) {
         // TODO: sanity check
 
