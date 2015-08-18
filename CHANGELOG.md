@@ -1,6 +1,6 @@
 ## board.web v.0.3.1
 
-* BUGFIX: the web page was mistakenly opening connections to `localhost`. Replaced it with protocol-relative URL.
+* BUGFIX: the web page was mistakenly opening connections to `localhost`. Replaced it with a protocol-relative URL.
 
 ## board.web v.0.3.0
 
