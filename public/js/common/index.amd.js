@@ -28,7 +28,9 @@ xhr.open("get", url, true);
 xhr.send();
 
 var createSocket = function createSocket() {
-    var socket = io('http://localhost:4242/' + target);
+
+    // TODO: get this from a configuration file.
+    var socket = io('//:4242/' + target);
 
     socket.on('connect', function () {});
 

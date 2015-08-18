@@ -1,6 +1,6 @@
 {
   "name": "board.web",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A web server factory for board.",
   "main": "index.js",
   "scripts": {
